@@ -14,19 +14,19 @@ function Header() {
          </Link>
          <nav>
             <NavLink
-               to="/host"
+               to="host"
                style={({ isActive }) => (isActive ? activeStyles : null)}
             >
                Host
             </NavLink>
             <NavLink
-               to="/about"
+               to="about"
                style={({ isActive }) => (isActive ? activeStyles : null)}
             >
                About
             </NavLink>
             <NavLink
-               to="/vans"
+               to="vans"
                style={({ isActive }) => (isActive ? activeStyles : null)}
             >
                Vans
