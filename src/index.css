@@ -2,12 +2,19 @@
   box-sizing: border-box;
 }
 
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   background-color: #FFF7ED;
   font-family: "Inter", sans-serif;
+  height: 100%;
 }
 
 body::-webkit-scrollbar {
@@ -44,6 +51,25 @@ header a {
 header a:hover {
   color: #161616;
   text-decoration: underline;
+}
+
+main {
+  margin-bottom: 84px;
+
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+footer {
+  background-color: #161616;
+  color: #AAAAAA;
+  height: 74px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: auto; */
+  font-weight: 500;
 }
 
 .link-button {
