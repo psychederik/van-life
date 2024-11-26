@@ -6,7 +6,7 @@ import Dashboard from './pages/Host/Dashboard';
 import Income from './pages/Host/Income';
 import Reviews from './pages/Host/Reviews';
 import HostVans from './pages/Host/HostVans/HostVans';
-import HostVanDetails from './pages/Host/HostVanDetails';
+import HostVanDetails from './pages/Host/HostVanDetails/HostVanDetails';
 import About from './pages/About/About';
 import Vans from './pages/Vans/Vans';
 import VanDetails from './pages/VanDetails/VanDetails';
