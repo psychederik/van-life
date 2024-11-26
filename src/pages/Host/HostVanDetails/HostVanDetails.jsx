@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Outlet } from 'react-router-dom';
+import HostVanDetailsNav from '../../../components/HostVanDetailsNav';
 import './HostVanDetails.css';
 
 function HostVanDetails() {
@@ -11,10 +12,10 @@ function HostVanDetails() {
          .then((res) => res.json())
          .then((data) => setHostVanDetails(data.vans));
    }, [params.id]);
-   console.log(hostVanDetails);
 
    return (
       <div className="host-van-details-wrapper">
+         {/* optionally use relative="path" */}
          <Link to={-1} className="back-button">
             ↩ Back to all vans
          </Link>
@@ -35,6 +36,8 @@ function HostVanDetails() {
                   </p>
                </div>
             </div>
+            <HostVanDetailsNav />
+            <Outlet context={{ hostVanDetails }} />
          </div>
       </div>
    );
