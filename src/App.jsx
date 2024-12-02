@@ -13,6 +13,7 @@ import HostVanDetails from './pages/Host/HostVanDetails/HostVanDetails';
 import About from './pages/About/About';
 import Vans from './pages/Vans/Vans';
 import VanDetails from './pages/VanDetails/VanDetails';
+import Page404 from './pages/404/Page404';
 
 import './server';
 
@@ -37,6 +38,7 @@ function App() {
                   <Route path="about" element={<About />} />
                   <Route path="vans" element={<Vans />} />
                   <Route path="vans/:id" element={<VanDetails />} />
+                  <Route path="*" element={<Page404 />} />
                </Route>
             </Routes>
          </BrowserRouter>
