@@ -1,0 +1,10 @@
+/* PAGE 404 */
+.page-404-container {
+    padding-inline: 26px;
+}
+
+.page-404-container .link-button {
+    width: 100%;
+    background-color: #161616;
+    color: white;
+}
