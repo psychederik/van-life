@@ -88,3 +88,7 @@ footer {
 .link-button:hover {
   transform: translate(1px, 1px);
 }
+
+.login-icon {
+  width: 25px;
+}
