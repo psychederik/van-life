@@ -1,17 +1,38 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link, Outlet } from 'react-router-dom';
+import { getHostVans } from '../../../api';
 import HostVanDetailsNav from '../../../components/HostVanDetailsNav';
 import './HostVanDetails.css';
 
 function HostVanDetails() {
    const [hostVanDetails, setHostVanDetails] = useState([]);
-   const params = useParams();
+   const [loading, setLoading] = useState(false);
+   const [error, setError] = useState(null);
+   const { id } = useParams();
 
    useEffect(() => {
-      fetch(`/api/host/vans/${params.id}`)
-         .then((res) => res.json())
-         .then((data) => setHostVanDetails(data.vans));
-   }, [params.id]);
+      async function loadVans() {
+         setLoading(true);
+         try {
+            const data = await getHostVans(id);
+            setHostVanDetails(data);
+         } catch (err) {
+            setError(err);
+         } finally {
+            setLoading(false);
+         }
+      }
+
+      loadVans();
+   }, [id]);
+
+   if (loading) {
+      return <h1>Loading...</h1>;
+   }
+
+   if (error) {
+      return <h1>There was an error: {error.message}</h1>;
+   }
 
    return (
       <div className="host-van-details-wrapper">
